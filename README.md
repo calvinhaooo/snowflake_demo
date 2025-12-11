@@ -5,6 +5,37 @@ The project demonstrates how to model, transform, and orchestrate data in a mode
 
 ## Project Structure
 
+```mermaid
+flowchart LR
+
+    %% --- Raw Layer ---
+    A[🍃 CSV / TPCH Raw Data] --> B
+
+    %% --- Airflow ingestion ---
+    B[[🌀 Airflow<br/>Load Raw Data into Snowflake]] --> C
+
+    %% --- Staging + Quality Checks ---
+    C --> D((🔍 Quality Checks))
+    D --> E[[🏗️ dbt Staging Models]]
+
+    %% --- Intermediate + Quality Checks ---
+    E --> F((🔍 Quality Checks))
+    F --> G[[🔧 dbt Intermediate Models]]
+
+    %% --- Fact / Mart + Quality Checks ---
+    G --> H((🔍 Quality Checks))
+    H --> I[[📊 dbt Fact & Mart Models]]
+
+    %% --- BI Layer ---
+    I --> J[📈 BI Dashboard / Reporting]
+
+    %% --- Optional blue outline like your diagram ---
+    classDef pipeline stroke:#3fa9f5,stroke-width:2px,stroke-dasharray:6 4,fill:none;
+    class B,D,E,F,G,H,I pipeline;
+```
+
+
+
 Below are the key directories and files of this project (non-essential auto-generated folders omitted):
 
 ```
