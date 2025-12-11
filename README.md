@@ -5,6 +5,10 @@ The project demonstrates how to model, transform, and orchestrate data in a mode
 
 ## Project Structure
 
+Below is the DAG task graph:
+
+![alt text](image.png)
+
 Below are the key directories and files of this project (non-essential auto-generated folders omitted):
 
 ```

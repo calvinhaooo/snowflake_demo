@@ -1,6 +1,2 @@
 project:
     name: dbt-dag
-
-images:
-  airflow:
-    dockerfile: ./Dockerfile
