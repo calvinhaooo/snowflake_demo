@@ -5,17 +5,6 @@ The project demonstrates how to model, transform, and orchestrate data in a mode
 
 ## Project Structure
 
-```mermaid
-flowchart TD
-
-    A[Airflow Scheduler<br>Orchestration Layer] --> B[Extract (E)<br>API / CSV / Database Sources]
-    B --> C[Load (L)<br>Load Raw Data into Snowflake]
-
-    C --> D[Transform (T)<br>dbt SQL Models]
-
-    D --> E[Snowflake Data Marts<br>Consumed by BI / Analytics]
-```
-
 Below are the key directories and files of this project (non-essential auto-generated folders omitted):
 
 ```
